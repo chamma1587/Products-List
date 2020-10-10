@@ -45,7 +45,7 @@ class ProductRepository implements ProductRepositoryInterface
             });
         }     
 
-        return $product->orderBy('id', 'ASC')->paginate(2) ->appends(['search' => $search, 'page' => request('page')]);
+        return $product->orderBy('id', 'ASC')->paginate(5) ->appends(['search' => $search, 'page' => request('page')]);
 
     }
 
