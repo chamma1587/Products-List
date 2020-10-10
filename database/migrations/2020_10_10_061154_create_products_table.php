@@ -15,6 +15,12 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('uuid');
+            $table->string('name');
+            $table->decimal('price', 15,2);
+            $table->decimal('discount', 5,2);
+            $table->text('description');
+            $table->string('image');
             $table->timestamps();
         });
     }

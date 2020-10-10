@@ -1,14 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
+                <div class="card-header">{{ __('Admin Login') }}</div>
+                @if ($errors->any())
+                {{ implode('', $errors->all('<div>:message</div>')) }}
+            @endif
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('adminLogin') }}">
                         @csrf
 
                         <div class="form-group row">
